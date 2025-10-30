@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El amor de mi vida 💕</title>
+<style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+    color: #333;
+    text-align: center;
+    padding: 20px;
+  }
+  h1 {
+    color: #d63384;
+    font-size: 2.5em;
+  }
+  img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin: 15px;
+    border: 3px solid white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  }
+  .dedicatoria {
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    margin: 15px auto;
+    width: 90%;
+  }
+  .pregunta {
+    margin-top: 20px;
+    background: rgba(255,255,255,0.7);
+    padding: 15px;
+    border-radius: 10px;
+  }
+  button {
+    background: #d63384;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+  <h1>💞 El amor de mi vida 💞</h1>
+  <img src="URL_DE_TU_FOTO" alt="Foto de ella">
+  <div class="dedicatoria">
+    <p>Desde el día en que te conocí, mi mundo cambió. Esta página es para recordarte que eres y siempre serás mi razón favorita. 💖</p>
+  </div>
+
+  <div class="pregunta" id="quiz">
+    <h2>¿Recuerdas cómo fue nuestro primer beso?</h2>
+    <button onclick="mostrarHistoria(1)">Sí 💋</button>
+    <button onclick="mostrarHistoria(0)">No 😅</button>
+  </div>
+
+  <div id="historia" class="dedicatoria" style="display:none;">
+  </div>
+
+<script>
+function mostrarHistoria(opcion) {
+  const historia = document.getElementById('historia');
+  historia.style.display = 'block';
+  if(opcion === 1){
+    historia.innerHTML = "<p>💫 Fue el día que nos conocimos, en mi casa. Llevaba puesto un pantalón gris... y desde ese momento supe que algo especial había nacido. 💞</p>";
+  } else {
+    historia.innerHTML = "<p>Ups 😅, fue el día que nos conocimos y nos dimos nuestro primer beso en mi casa, ¡inolvidable! 💋</p>";
+  }
+}
+</script>
+</body>
+</html>
