@@ -1,70 +1,79 @@
         
 
   
-                                <!DOCTYPE html>
+                                                <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>La mujer de mi vida 💖</title>
-<link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --paper:#fff6f6; --accent:#ff5c8d; --accent-2:#e96b9a; --ink:#3b2430; --muted:#94646f;
-  }
-  *{box-sizing:border-box}
-  html,body{height:100%;margin:0;font-family:Poppins,system-ui,-apple-system,"Segoe UI",Roboto,Arial;background:linear-gradient(180deg,#fff4f8,#fffafc);color:var(--ink)}
-  .wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;}
-  .notebook{width:100%;max-width:980px;background:repeating-linear-gradient(180deg, rgba(255,255,255,0.75) 0 46px, rgba(0,0,0,0.01) 46px 47px),var(--paper);border-radius:18px;box-shadow:0 18px 40px rgba(60,20,30,0.12);padding:26px;position:relative;overflow:hidden}
-  .spiral{position:absolute;left:-26px;top:24px;height:86%;width:52px;display:flex;flex-direction:column;align-items:center}
-  .spiral .ring{width:14px;height:14px;border:3px solid #f1b9c9;border-radius:50%;margin:10px 0;background:#fff}
-  .ribbon{position:absolute;right:20px;top:12px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;padding:8px 12px;border-radius:10px;font-weight:700}
-  /* pages */
-  section.page{display:none;padding:8px 6px}
-  section.page.active{display:block;animation:pageIn .35s ease}
-  @keyframes pageIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-  header.cover{text-align:center}
-  header.cover h1{font-family:'Parisienne',cursive;font-size:44px;margin:6px 0;color:var(--accent-2)}
-  .photo-wrap{display:flex;flex-direction:column;align-items:center;gap:12px;margin-top:6px}
-  .photo{width:220px;height:220px;border-radius:18px;overflow:hidden;border:6px solid #fff;background:#ffeef6;box-shadow:0 14px 36px rgba(233,107,154,0.08)}
-  .photo img{width:100%;height:100%;object-fit:cover;display:block}
-  .subtitle{max-width:720px;margin:auto;background:linear-gradient(180deg,#fff,#fff6fb);padding:12px;border-radius:10px;color:var(--muted);font-size:15px}
-  .controls{display:flex;gap:10px;justify-content:center;margin-top:12px;flex-wrap:wrap}
-  .btn{background:linear-gradient(180deg,var(--accent),var(--accent-2));color:white;padding:10px 16px;border-radius:12px;border:none;cursor:pointer;font-weight:700}
-  .btn.secondary{background:transparent;color:var(--accent-2);border:2px solid rgba(233,107,154,0.12)}
-  .form-card{background:var(--paper);padding:14px;border-radius:12px;border:1px solid rgba(0,0,0,0.03)}
-  label{display:block;font-weight:700;margin-bottom:6px;color:var(--accent-2)}
-  input[type="text"],textarea,select{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(0,0,0,0.06);margin-bottom:10px;font-size:14px}
-  textarea{min-height:100px;resize:vertical}
-  .timeline{display:grid;gap:10px;margin-top:12px}
-  .card{background:linear-gradient(180deg,#fff,#fffaf6);padding:12px;border-radius:10px;border-left:6px solid var(--accent);box-shadow:0 8px 18px rgba(0,0,0,0.04)}
-  .muted{color:var(--muted);font-size:0.95rem}
-  .reasons-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
-  .reason{background:#fff;padding:10px;border-radius:8px;color:#6b2f3f;font-weight:600;text-align:center;border:1px solid rgba(0,0,0,0.04)}
-  .formula-box{background:#fff;padding:12px;border-radius:10px;border:1px dashed rgba(0,0,0,0.06);display:flex;align-items:center;justify-content:center;flex-direction:column}
-  .small{font-size:13px;color:var(--muted);text-align:center;margin-top:8px}
-  .float-heart{position:fixed;z-index:6;pointer-events:none;font-size:18px;opacity:0.95;animation:floatUp 6s linear forwards}
-  @keyframes floatUp{0%{transform:translateY(0) scale(0.7);opacity:0.9}100%{transform:translateY(-720px) scale(1.4);opacity:0}}
-  .diag{position:fixed;right:12px;top:12px;background:#fff;padding:8px 10px;border-radius:10px;border:1px solid rgba(0,0,0,0.06);box-shadow:0 6px 18px rgba(0,0,0,0.06);font-size:13px;color:var(--muted);z-index:9999}
-  .diag .status{font-weight:700;color:green}
-  @media (max-width:720px){.reasons-grid{grid-template-columns:repeat(2,1fr)}.photo{width:170px;height:170px}}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>La mujer de mi vida 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --paper:#fff6f6; --accent:#ff5c8d; --accent-2:#e96b9a; --ink:#3b2430; --muted:#94646f;
+      --page-bg: linear-gradient(180deg,#fffafc,#fff6f8);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Poppins,system-ui,-apple-system,"Segoe UI",Roboto,Arial;background:linear-gradient(180deg,#fff4f8,#fffafc);color:var(--ink)}
+    /* wrap + notebook */
+    .wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;}
+    .notebook{width:100%;max-width:980px;background:
+      repeating-linear-gradient(180deg, rgba(255,255,255,0.78) 0 46px, rgba(0,0,0,0.01) 46px 47px), var(--paper);
+      border-radius:18px;box-shadow:0 18px 40px rgba(60,20,30,0.12);padding:26px;position:relative;overflow:hidden}
+    /* spiral rings */
+    .spiral{position:absolute;left:-28px;top:24px;height:86%;width:52px;display:flex;flex-direction:column;align-items:center}
+    .spiral .ring{width:14px;height:14px;border:3px solid #f1b9c9;border-radius:50%;margin:10px 0;background:#fff}
+    .ribbon{position:absolute;right:20px;top:12px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;padding:8px 12px;border-radius:10px;font-weight:700}
+    /* pages */
+    section.page{display:none;padding:8px 6px}
+    section.page.active{display:block;animation:pageIn .35s ease}
+    @keyframes pageIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+    header.cover{text-align:center}
+    header.cover h1{font-family:'Parisienne',cursive;font-size:44px;margin:6px 0;color:var(--accent-2)}
+    .photo-wrap{display:flex;flex-direction:column;align-items:center;gap:12px;margin-top:6px}
+    .photo{width:220px;height:220px;border-radius:18px;overflow:hidden;border:6px solid #fff;background:#ffeef6;box-shadow:0 14px 36px rgba(233,107,154,0.08)}
+    .photo img{width:100%;height:100%;object-fit:cover;display:block}
+    .subtitle{max-width:720px;margin:auto;background:linear-gradient(180deg,#fff,#fff6fb);padding:12px;border-radius:10px;color:var(--muted);font-size:15px}
+    .controls{display:flex;gap:10px;justify-content:center;margin-top:12px;flex-wrap:wrap}
+    .btn{background:linear-gradient(180deg,var(--accent),var(--accent-2));color:white;padding:10px 16px;border-radius:12px;border:none;cursor:pointer;font-weight:700}
+    .btn.secondary{background:transparent;color:var(--accent-2);border:2px solid rgba(233,107,154,0.12)}
+    .form-card{background:var(--paper);padding:14px;border-radius:12px;border:1px solid rgba(0,0,0,0.03)}
+    label{display:block;font-weight:700;margin-bottom:6px;color:var(--accent-2)}
+    input[type="text"],textarea,select{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(0,0,0,0.06);margin-bottom:10px;font-size:14px}
+    textarea{min-height:100px;resize:vertical}
+    .timeline{display:grid;gap:10px;margin-top:12px}
+    .card{background:linear-gradient(180deg,#fff,#fffaf6);padding:12px;border-radius:10px;border-left:6px solid var(--accent);box-shadow:0 8px 18px rgba(0,0,0,0.04)}
+    .muted{color:var(--muted);font-size:0.95rem}
+    .reasons-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+    .reason{background:#fff;padding:10px;border-radius:8px;color:#6b2f3f;font-weight:600;text-align:center;border:1px solid rgba(0,0,0,0.04)}
+    .formula-box{background:#fff;padding:12px;border-radius:10px;border:1px dashed rgba(0,0,0,0.06);display:flex;align-items:center;justify-content:center;flex-direction:column}
+    .small{font-size:13px;color:var(--muted);text-align:center;margin-top:8px}
+    .float-heart{position:fixed;z-index:6;pointer-events:none;font-size:18px;opacity:0.95;animation:floatUp 6s linear forwards}
+    @keyframes floatUp{0%{transform:translateY(0) scale(0.7);opacity:0.9}100%{transform:translateY(-720px) scale(1.4);opacity:0}}
+    .diag{position:fixed;right:12px;top:12px;background:#fff;padding:8px 10px;border-radius:10px;border:1px solid rgba(0,0,0,0.06);box-shadow:0 6px 18px rgba(0,0,0,0.06);font-size:13px;color:var(--muted);z-index:9999}
+    .diag .status{font-weight:700;color:green}
+    @media (max-width:720px){
+      .reasons-grid{grid-template-columns:repeat(2,1fr)}
+      .photo{width:170px;height:170px}
+      header.cover h1{font-size:34px}
+    }
+  </style>
 </head>
 <body>
   <div class="diag">JS: <span id="diagStatus" class="status">comprobando...</span></div>
 
   <div class="wrap">
     <div class="notebook" id="notebook">
-      <div class="spiral" aria-hidden="true"><div class="ring"></div><div class="ring"></div><div class="ring"></div></div>
+      <div class="spiral" aria-hidden="true"><div class="ring"></div><div class="ring"></div><div class="ring"></div><div class="ring"></div></div>
       <div class="ribbon">Cuaderno de nosotras</div>
 
-      <!-- 1. Portada / título -->
+      <!-- 1. Portada/título -->
       <section id="page-1" class="page active" aria-label="Portada">
         <header class="cover">
           <h1>La mujer de mi vida</h1>
           <div class="photo-wrap">
             <div class="photo"><img id="coverPhoto" src="ella.jpg" alt="La mujer de mi vida"></div>
-            <div class="subtitle">Tus ojitos lindos 🌷, mi razón de sonreír cada día. Esta página es un pedacito de mi corazón para ti 💕</div>
+            <div class="subtitle">Tus ojitos lindos 🌷, mi razón de sonreír cada día. Esta libreta es un pedacito de mi corazón para ti 💕</div>
           </div>
           <div class="controls">
             <button class="btn secondary" data-action="music">🎵 Música (opcional)</button>
@@ -78,7 +87,7 @@
         <div class="form-card">
           <h2 style="text-align:center;font-family:'Parisienne',cursive">📝 Cuestionario (línea de tiempo)</h2>
 
-          <!-- Preguntas exactas que pediste -->
+          <!-- Preguntas exactas -->
           <label for="q1">1. ¿Cuándo fue nuestro primer beso?</label>
           <input id="q1" type="text" placeholder="Ej: El día que nos conocimos (fecha o descripción)">
 
@@ -115,14 +124,13 @@
       <section id="page-3" class="page" aria-label="Línea de tiempo">
         <h2 style="text-align:center;font-family:'Parisienne',cursive">🕰️ Nuestra línea de tiempo</h2>
         <div id="timelineArea" class="timeline"></div>
-
         <div class="controls" style="margin-top:12px">
           <button class="btn secondary" data-goto="2">◀ Atrás</button>
           <button class="btn" data-goto="4">Siguiente ➜</button>
         </div>
       </section>
 
-      <!-- 4. Dedicatoria (breve) -->
+      <!-- 4. Dedicatoria -->
       <section id="page-4" class="page" aria-label="Dedicatoria">
         <h2 style="text-align:center;font-family:'Parisienne',cursive">💌 Dedicatoria</h2>
         <div class="card">Para ti, mi amor: eres mi orgullo, mi calma y la razón por la que sonrío. Gracias por cada día.</div>
@@ -132,7 +140,7 @@
         </div>
       </section>
 
-      <!-- 5. Sección para que ella escriba sus momentos -->
+      <!-- 5. Sección en la que ella escribe sus momentos -->
       <section id="page-5" class="page" aria-label="Tus momentos">
         <h2 style="text-align:center;font-family:'Parisienne',cursive">🖊️ Tus momentos y planes</h2>
         <div class="form-card">
@@ -152,7 +160,7 @@
         </div>
       </section>
 
-      <!-- 6. Mis planes contigo (tu texto largo) -->
+      <!-- 6. Mis planes contigo (tu texto) -->
       <section id="page-6" class="page" aria-label="Mis planes">
         <h2 style="text-align:center;font-family:'Parisienne',cursive">📜 Mis planes contigo</h2>
         <div class="card" style="margin-top:12px">
@@ -164,17 +172,17 @@
         </div>
       </section>
 
-      <!-- 7. 100 razones para amarte (completas) -->
+      <!-- 7. 100 razones -->
       <section id="page-7" class="page" aria-label="100 razones">
         <h2 style="text-align:center;font-family:'Parisienne',cursive">💯 100 razones para amarte</h2>
-        <div id="reasonsGrid" class="reasons-grid"></div>
+        <div id="reasonsGrid" class="reasons-grid" style="margin-top:12px"></div>
         <div class="controls" style="margin-top:12px">
           <button class="btn secondary" data-goto="6">◀ Atrás</button>
           <button class="btn" data-goto="8">Siguiente ➜</button>
         </div>
       </section>
 
-      <!-- 8. La fórmula del amor (SVG recreada) -->
+      <!-- 8. Fórmula del amor -->
       <section id="page-8" class="page" aria-label="Fórmula del amor">
         <h2 style="text-align:center;font-family:'Parisienne',cursive">🧪 La Fórmula del Amor</h2>
         <div class="formula-box" style="margin-top:12px">
@@ -188,7 +196,6 @@
             </g>
           </svg>
         </div>
-
         <div class="controls" style="margin-top:12px">
           <button class="btn secondary" data-goto="7">◀ Atrás</button>
           <button class="btn" data-goto="9">Siguiente ➜</button>
@@ -213,7 +220,7 @@
   </div>
 
 <script>
-/* Robust navigation & logic */
+/* Single-file robust script: wires navigation, questionnaire, timeline, notes and reasons */
 (function(){
   const diag = document.getElementById('diagStatus');
   function setDiag(text, ok=true){ if(diag){ diag.textContent = text; diag.style.color = ok ? 'green' : 'crimson'; } }
@@ -234,7 +241,7 @@
       window.scrollTo({top:0,behavior:'smooth'});
     }
 
-    // wire data-goto
+    // Wire data-goto buttons
     document.querySelectorAll('[data-goto]').forEach(btn=>{
       btn.addEventListener('click', function(){
         const t = parseInt(this.getAttribute('data-goto'),10);
@@ -243,21 +250,19 @@
       });
     });
 
-    // wire data-action
+    // Wire actions
     document.querySelectorAll('[data-action]').forEach(btn=>{
       const a = btn.getAttribute('data-action');
       if(a === 'music'){
-        btn.addEventListener('click', ()=> alert('Si quieres que suene la canción, sube el mp3 al repo y dime el nombre; lo integro.'));
-      }
-      if(a === 'submitAnswers'){
+        btn.addEventListener('click', ()=> alert('Si quieres que suene la canción aquí, sube el mp3 al repo y dime su nombre exacto; lo integro.'));
+      } else if(a === 'submitAnswers'){
         btn.addEventListener('click', submitAnswers);
-      }
-      if(a === 'saveNotes'){
+      } else if(a === 'saveNotes'){
         btn.addEventListener('click', saveNotes);
       }
     });
 
-    // populate 100 reasons
+    // Populate 100 reasons
     const reasons = [
 "Porque iluminas mis días con tu sonrisa","Por cómo me abrazas cuando más lo necesito","Porque eres mi mejor compañía","Por tu risa que contagia alegría","Porque me entiendes con una mirada","Por tu paciencia infinita","Porque celebras mis éxitos como si fueran tuyos","Por tus detalles inesperados","Porque me inspiras a ser mejor","Por la forma en que cuidas lo que amamos","Porque confío en ti completamente","Por tus ojos que me derriten","Por tus manos que me sostienen","Porque me haces sentir en casa","Por tu honestidad y transparencia","Porque respetas mis tiempos","Por tu sentido del humor","Porque aceptas mis imperfecciones","Por las noches en que me haces soñar","Porque vamos de la mano en todo","Por la ternura con la que hablas","Porque me motivas cuando flaqueo","Por tus abrazos que curan","Porque tus besos son mi refugio","Por tu mirada cómplice","Porque sabes sorprenderme","Por la confianza que me brindas","Porque eres mi cómplice en aventuras","Por cada mensaje lindo que dejas","Porque luchamos juntas por lo que queremos","Por tus consejos sabios","Porque tu risa me hace feliz","Por tu valentía para enfrentar la vida","Porque eres generosa con tu tiempo","Por tus sueños que ahora son nuestros","Porque aprendemos juntas cada día","Por la calma que traes a mi mundo","Porque me recuerdas siempre cuánto valgo","Por tus abrazos al despertar","Porque me motivas a crecer","Por cada detalle que guardo en mi corazón","Porque transformas lo simple en mágico","Por el amor con el que tratas a los demás","Porque me escuchas sin juzgar","Por tus palabras que acarician el alma","Porque tus manos me sostienen fuerte","Por cada proyecto que imaginamos juntas","Porque tu mirada es mi lugar seguro","Por tus ocurrencias que nos hacen reír","Porque respetas mis espacios","Por tu energía positiva","Porque me enseñas a amar mejor","Por los pequeños rituales que creamos","Porque me sorprendes con detalles únicos","Por la complicidad de nuestras miradas","Porque juntas somos un gran equipo","Por tu ternura en los momentos difíciles","Porque me alientas a perseguir mis sueños","Por tu amor incondicional","Porque me ayudas a ver lo bueno","Por los planes locos que imaginamos","Porque me ayudas a calmar mis miedos","Por tu capacidad de perdonar","Porque compartimos risas infinitas","Por tus manos que arropan mi corazón","Porque siempre encuentras la forma de cuidarme","Por la confianza que me das para ser yo","Porque tu voz es mi melodía favorita","Por tus abrazos que hacen todo mejor","Porque me apoyas en todo momento","Por tus consejos sabios y sinceros","Porque tus ojos brillan cuando me ves","Por la belleza de tu alma","Porque juntos crecemos y aprendemos","Por la paz que transmites","Porque tus metas son también nuestras metas","Por la dulzura con la que me miras","Porque tu amor me hace valiente","Por los recuerdos que vamos guardando","Porque me emociono solo de pensar en ti","Por tu capacidad de sorprenderme siempre","Porque me entiendes sin palabras","Por la alegría que traes a mis días","Porque aceptas mi forma de ser","Por los planes que aún nos faltan por cumplir","Porque juntos transformamos los miedos en ganas","Por tu ternura en cada gesto","Porque contigo todo toma sentido","Por ser mi compañera de vida","Porque construimos sueños y realidades","Por tu humildad y grandeza","Porque me completas de formas que no imaginé","Por tus abrazos al final del día","Porque eres mi hogar, mi paz, mi risa","Porque tu mirada me guía","Por la confianza que transmites","Por cada gesto que demuestra tu amor","Porque tu presencia transforma los días grises","Por el brillo que traes a mis mañanas","Porque juntos representamos fuerza y ternura","Por la forma en que me cuidas sin que lo pida","Porque eres el mejor lugar para volver","Por cada palabra que me regala calma","Porque haces que todo valga la pena","Por tu sinceridad","Por tu ternura al dormir","Por tus abrazos cuando tengo miedo","Por las canciones que me dedicas","Por cada paseo a tu lado","Por el cariño que pones en lo cotidiano","Por tu forma honesta de querer","Por la forma en que me animas","Por los pequeños regalos del día a día","Por cada mañana que comienzo contigo"
     ];
@@ -268,15 +273,12 @@
       });
     }
 
-    // floating hearts small effect
+    // floating hearts
     setInterval(()=> {
       const span = document.createElement('div'); span.className='float-heart'; span.style.left = (5 + Math.random()*90) + 'vw'; span.style.fontSize = (12 + Math.random()*18) + 'px'; span.textContent = '💗'; document.body.appendChild(span); setTimeout(()=> span.remove(), 6400);
-    }, 1100);
+    }, 1000);
 
-    // functions bound to window for debugging if needed
-    window.activatePage = activate;
-
-    // submitAnswers: build timeline using either user inputs or your known defaults
+    // submitAnswers: build timeline
     function submitAnswers(){
       try{
         const defaults = {
@@ -289,6 +291,4 @@
           q6: 'un collar'
         };
         const q1 = (document.getElementById('q1')?.value.trim()) || defaults.q1;
-        const q2 = (document.getElementById('q2')?.value.trim()) || defaults.q2;
-        const qP = (document.getElementById('qPantalon')?.value.trim()) || defaults.qPantalon;
-      
+        const 
