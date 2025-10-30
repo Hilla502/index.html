@@ -1,269 +1,221 @@
         
 
   
-        <!DOCTYPE html>
+                            <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>La mujer de mi vida 💖</title>
-  <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La mujer de mi vida</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    :root{
-      --paper:#fff6f6; --accent:#ff5c8d; --accent-2:#e96b9a; --ink:#3b2430; --muted:#94646f; --card:#fff3f6;
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #ffe6f0, #fff);
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      color: #333;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family: Poppins, system-ui, -apple-system, "Segoe UI", Roboto, Arial;background:linear-gradient(180deg,#fff4f8,#fffafc);color:var(--ink)}
-    .wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;}
-    .notebook{width:100%;max-width:980px;background:repeating-linear-gradient(180deg, rgba(255,255,255,0.75) 0 46px, rgba(0,0,0,0.01) 46px 47px),var(--paper);border-radius:16px;box-shadow:0 12px 30px rgba(60,20,30,0.12);padding:18px;position:relative;overflow:hidden;}
-    .spiral{position:absolute;left:-22px;top:22px;height:86%;width:52px;display:flex;flex-direction:column;align-items:center}
-    .spiral .ring{width:14px;height:14px;border:3px solid #f1b9c9;border-radius:50%;margin:10px 0;background:#fff}
-    .ribbon{position:absolute;right:18px;top:12px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;padding:8px 12px;border-radius:10px;font-weight:700}
-    .page{display:none}
-    .page.active{display:block;animation:pageIn .35s ease}
-    @keyframes pageIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-    header.cover{text-align:center;padding:8px 6px;margin-bottom:12px}
-    header.cover h1{font-family:'Parisienne',cursive;font-size:44px;margin:6px 0;color:var(--accent-2)}
-    .photo-wrap{display:flex;flex-direction:column;align-items:center;gap:12px;margin-top:6px}
-    .photo{width:210px;height:210px;border-radius:16px;overflow:hidden;border:6px solid #fff;background:#ffeef6;box-shadow:0 10px 28px rgba(233,107,154,0.08)}
-    .photo img{width:100%;height:100%;object-fit:cover;display:block}
-    .subtitle{max-width:720px;margin:auto;background:linear-gradient(180deg,#fff,#fff6fb);padding:12px;border-radius:10px;border:1px dashed rgba(233,107,154,0.08);color:var(--muted);font-size:15px}
-    .controls{display:flex;gap:10px;justify-content:center;margin-top:16px;flex-wrap:wrap}
-    .btn{background:linear-gradient(180deg,var(--accent),var(--accent-2));color:white;padding:10px 16px;border-radius:12px;border:none;cursor:pointer;font-weight:700}
-    .btn.secondary{background:transparent;color:var(--accent-2);border:2px solid rgba(233,107,154,0.12)}
-    .form-card{background:var(--card);padding:14px;border-radius:12px;border:1px solid rgba(0,0,0,0.03)}
-    input[type="text"],textarea,select{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(0,0,0,0.06);background:rgba(255,255,255,0.95);font-size:14px;color:var(--ink)}
-    textarea{min-height:100px;resize:vertical}
-    .timeline{display:grid;gap:10px;margin-top:12px}
-    .timeline .card{background:linear-gradient(180deg,#fff,#fffaf6);padding:12px;border-radius:10px;border-left:6px solid var(--accent);box-shadow:0 8px 18px rgba(0,0,0,0.04)}
-    .timeline .card h3{margin:0 0 8px 0;color:var(--accent-2)}
-    .muted{color:var(--muted);font-size:0.95rem}
-    .reasons-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
-    .reason{background:#fff;padding:8px;border-radius:8px;color:#6b2f3f;font-weight:600;text-align:center;border:1px solid rgba(0,0,0,0.04)}
-    .formula-wrap{display:flex;flex-direction:column;align-items:center;gap:10px;padding:12px}
-    .final{padding:14px;border-radius:10px;background:linear-gradient(180deg,#fff,#fff3f7)}
-    .small{font-size:0.85rem;color:var(--muted)}
-    .float-heart{position:fixed;z-index:6;pointer-events:none;font-size:18px;opacity:0.95;animation:floatUp 6s linear forwards}
-    @keyframes floatUp{0%{transform:translateY(0) scale(0.7);opacity:0.9}100%{transform:translateY(-720px) scale(1.4);opacity:0}}
-    .pager{display:flex;gap:10px;justify-content:center;margin-top:14px}
-    @media (max-width:720px){
-      .reasons-grid{grid-template-columns:repeat(2,1fr)}
-      .photo{width:170px;height:170px}
+
+    .page {
+      display: none;
+      height: 100vh;
+      padding: 40px;
+      box-sizing: border-box;
+      text-align: center;
+      transition: opacity 0.6s ease;
+    }
+
+    .page.active {
+      display: block;
+      animation: fadeIn 0.8s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      color: #e91e63;
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    img {
+      width: 230px;
+      height: 230px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #ffb6c1;
+      box-shadow: 0 0 20px #ffc0cb;
+    }
+
+    .nav-buttons {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    button {
+      background: #ff85a2;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      padding: 10px 30px;
+      font-size: 1em;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #ff4d79;
+      transform: scale(1.05);
+    }
+
+    ul {
+      text-align: left;
+      max-width: 600px;
+      margin: 20px auto;
+    }
+
+    li {
+      margin: 8px 0;
+    }
+
+    .formula {
+      margin: 30px auto;
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 0 20px rgba(255,182,193,0.5);
+      display: inline-block;
+      text-align: left;
+    }
+
+    .formula h3 {
+      color: #e91e63;
+      text-align: center;
+    }
+
+    .formula p {
+      margin: 8px 0;
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="notebook" role="main" id="notebook">
-      <div class="spiral" aria-hidden="true"><div class="ring"></div><div class="ring"></div><div class="ring"></div><div class="ring"></div></div>
-      <div class="ribbon">Cuaderno de nosotras</div>
 
-      <!-- Page 1 -->
-      <section id="page-1" class="page active" aria-label="Portada">
-        <header class="cover">
-          <h1>La mujer de mi vida</h1>
-          <div class="photo-wrap">
-            <div class="photo"><img id="coverPhoto" src="ella.jpg" alt="La mujer de mi vida"></div>
-            <div class="subtitle">Tus ojitos lindos 🌷 — mi razón de sonreír cada día. Esta libreta es un pedacito de mi corazón para ti 💕</div>
-          </div>
-          <div class="controls">
-            <button class="btn secondary" data-action="music" title="Agregar canción (opcional)">🎵 Música (opcional)</button>
-            <button class="btn" data-goto="2">Siguiente ➜</button>
-          </div>
-          <div class="small" style="margin-top:8px">Si quieres que suene la canción dentro de la página, sube el mp3 y dime su nombre.</div>
-        </header>
-      </section>
-
-      <!-- Page 2 -->
-      <section id="page-2" class="page" aria-label="Cuestionario">
-        <div class="form-card">
-          <h2 style="text-align:center;font-family:'Parisienne',cursive">📝 Cuestionario</h2>
-          <div style="display:grid;gap:10px;margin-top:8px">
-            <div><label for="q1">1. ¿Dónde fue el primer beso?</label><input id="q1" type="text" placeholder="Escribe aquí..."></div>
-            <div><label for="q2">2. ¿Qué color de pantalón llevaba puesta Hillary?</label><input id="q2" type="text" placeholder="Escribe aquí..."></div>
-            <div><label for="q3">3. ¿En qué mes fue su primera cita?</label><input id="q3" type="text" placeholder="Escribe aquí..."></div>
-            <div><label for="q4">4. ¿Dónde fue su primera cita?</label><input id="q4" type="text" placeholder="Escribe aquí..."></div>
-            <div><label for="q5">5. ¿Quién dijo “te amo” primero?</label><select id="q5"><option value="">Selecciona...</option><option value="ella">Ella</option><option value="yo">Yo</option></select></div>
-            <div><label for="q6">6. ¿Qué obsequio te dio ese día?</label><input id="q6" type="text" placeholder="Escribe aquí..."></div>
-            <div><label for="q7">7. ¿Cuál fue el detalle que más recuerdas?</label><input id="q7" type="text" placeholder="Escribe aquí..."></div>
-            <div><label for="q8">8. Una palabra para ese momento</label><input id="q8" type="text" placeholder="Ej: mágico"></div>
-          </div>
-          <div class="controls" style="margin-top:12px">
-            <button class="btn secondary" data-goto="1">◀ Atrás</button>
-            <button class="btn" id="submitAnswers" data-action="submitAnswers">Enviar y ver timeline ➜</button>
-          </div>
-        </div>
-      </section>
-
-      <!-- Page 3 -->
-      <section id="page-3" class="page" aria-label="Timeline">
-        <h2 style="text-align:center;font-family:'Parisienne',cursive">🕰️ Nuestra línea de tiempo</h2>
-        <div id="timelineArea" class="timeline" style="margin-top:12px"></div>
-        <div class="controls" style="margin-top:12px">
-          <button class="btn secondary" data-goto="2">◀ Atrás</button>
-          <button class="btn" data-goto="4">Siguiente ➜</button>
-        </div>
-      </section>
-
-      <!-- Page 4 -->
-      <section id="page-4" class="page" aria-label="Dedicatoria">
-        <h2 style="text-align:center;font-family:'Parisienne',cursive">💌 Dedicatoria</h2>
-        <div class="final" style="margin-top:12px">
-          <h3>Para ti, mi amor</h3>
-          <p>Quiero que nunca olvides lo mucho que te amo. Eres la persona más especial que ha llegado a mi vida, mi orgullo y mi calma.</p>
-        </div>
-        <div class="controls" style="margin-top:12px">
-          <button class="btn secondary" data-goto="3">◀ Atrás</button>
-          <button class="btn" data-goto="5">Siguiente ➜</button>
-        </div>
-      </section>
-
-      <!-- Page 5 -->
-      <section id="page-5" class="page" aria-label="Escribe">
-        <h2 style="text-align:center;font-family:'Parisienne',cursive">🖊️ Tus momentos</h2>
-        <div class="form-card" style="margin-top:10px">
-          <label for="moments">Momentos especiales</label>
-          <textarea id="moments" placeholder="Escribe aquí..."></textarea>
-          <label for="likes" style="margin-top:8px">Lo que más te gusta de mí</label>
-          <textarea id="likes" placeholder="Escribe aquí..."></textarea>
-          <label for="plans" style="margin-top:8px">¿Planes conmigo?</label>
-          <textarea id="plans" placeholder="Escribe aquí..."></textarea>
-          <div class="controls" style="margin-top:12px">
-            <button class="btn secondary" data-goto="4">◀ Atrás</button>
-            <button class="btn" id="saveNotes" data-action="saveNotes">Guardar y siguiente ➜</button>
-          </div>
-        </div>
-      </section>
-
-      <!-- Page 6 -->
-      <section id="page-6" class="page" aria-label="Planes">
-        <h2 style="text-align:center;font-family:'Parisienne',cursive">📜 Mis planes contigo</h2>
-        <div style="margin-top:12px;background:linear-gradient(180deg,#fff,#fff6f6);padding:12px;border-radius:10px">
-          <p>“Este tiempo que llevo contigo ha sido todo un mar de ilusiones... Quiero formar una vida contigo, quiero entregarte mi tiempo, mis días. Quiero tener contigo una familia, una estabilidad, todo lo que quiero es contigo porque sin ti no tendría sentido.”</p>
-        </div>
-        <div class="controls" style="margin-top:12px">
-          <button class="btn secondary" data-goto="5">◀ Atrás</button>
-          <button class="btn" data-goto="7">Siguiente ➜</button>
-        </div>
-      </section>
-
-      <!-- Page 7 -->
-      <section id="page-7" class="page" aria-label="100 razones">
-        <h2 style="text-align:center;font-family:'Parisienne',cursive">💯 100 razones</h2>
-        <div id="reasonsGrid" class="reasons-grid"></div>
-        <div class="controls" style="margin-top:12px">
-          <button class="btn secondary" data-goto="6">◀ Atrás</button>
-          <button class="btn" data-goto="8">Siguiente ➜</button>
-        </div>
-      </section>
-
-      <!-- Page 8 -->
-      <section id="page-8" class="page" aria-label="Formula">
-        <h2 style="text-align:center;font-family:'Parisienne',cursive">🧪 La Fórmula del Amor</h2>
-        <div class="formula-wrap">
-          <!-- SVG recreada -->
-          <div class="formula-box" role="img" aria-label="Fórmula del amor dibujada">
-            <!-- simplified SVG to keep file reasonable -->
-            <svg width="100%" viewBox="0 0 860 420" xmlns="http://www.w3.org/2000/svg" style="max-width:860px">
-              <defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#ff9dbb"/><stop offset="1" stop-color="#ff5c8d"/></linearGradient></defs>
-              <rect x="0" y="0" width="860" height="420" fill="#fff6f7"/>
-              <text x="24" y="38" font-family="Parisienne" font-size="26" fill="#6b2740">La Fórmula del Amor ❤</text>
-              <g transform="translate(30,60)">
-                <path d="M110 18 C86 -30 12 -4 44 64 C66 112 116 146 150 148 C184 146 236 112 252 64 C278 -4 200 -30 170 18 Z" stroke="url(#g1)" stroke-width="6" fill="none"/>
-                <text x="6" y="200" font-size="13" fill="#4b2a3b">x² + (y - ³√x²)² = 1</text>
-                <text x="6" y="220" font-size="13" fill="#4b2a3b">x = te + amo</text>
-              </g>
-              <g transform="translate(380,60)">
-                <rect x="0" y="0" width="420" height="160" rx="10" fill="#fffaf7" stroke="#f1d0da"/>
-                <text x="16" y="28" font-size="16" fill="#6b2740" font-family="Parisienne">x = te + amo</text>
-                <text x="16" y="56" font-size="12" fill="#70404f">y = 1/x  ·  x = -3·sin(y)</text>
-              </g>
-            </svg>
-          </div>
-        </div>
-        <div class="controls" style="margin-top:12px">
-          <button class="btn secondary" data-goto="7">◀ Atrás</button>
-          <button class="btn" data-goto="9">Siguiente ➜</button>
-        </div>
-      </section>
-
-      <!-- Page 9 -->
-      <section id="page-9" class="page" aria-label="Comentario">
-        <h2 style="text-align:center;font-family:'Parisienne',cursive">✍️ ¿Qué te inspira?</h2>
-        <div class="form-card" style="margin-top:12px">
-          <label for="formulaComment">Escribe lo que te transmite esta fórmula</label>
-          <textarea id="formulaComment" placeholder="Tu comentario..."></textarea>
-          <div class="controls" style="margin-top:12px">
-            <button class="btn secondary" data-goto="8">◀ Atrás</button>
-            <button class="btn" data-goto="10">Siguiente ➜</button>
-          </div>
-        </div>
-      </section>
-
-      <!-- Page 10 -->
-      <section id="page-10" class="page" aria-label="Final">
-        <h2 style="text-align:center;font-family:'Parisienne',cursive">💖 Dedicatoria Final</h2>
-        <div class="final" style="margin-top:12px">
-          <h3>Para ti, mis "tus ojitos lindos"</h3>
-          <p>Te amo más de lo que las palabras pueden explicar... Estoy orgullosa de ti y de lo que somos.</p>
-        </div>
-        <div class="controls" style="margin-top:12px">
-          <button class="btn secondary" data-goto="9">◀ Atrás</button>
-          <button class="btn" data-goto="1">Volver al inicio</button>
-        </div>
-      </section>
-
+  <!-- Página 1 -->
+  <div class="page active" id="page1">
+    <h1>La mujer de mi vida</h1>
+    <img src="ella.jpg" alt="Ella">
+    <p>Eres mi inspiración, mi calma, mi alegría... la razón por la que sonrío cada día. 💖</p>
+    <div class="nav-buttons">
+      <button onclick="nextPage()">Siguiente</button>
     </div>
   </div>
 
-<script>
-  // Robust navigation & button wiring
-  (function(){
-    // Ensure DOM loaded
-    document.addEventListener('DOMContentLoaded', function(){
-      // Cache pages
-      const pages = Array.from(document.querySelectorAll('.page'));
-      const total = pages.length; // should be 10
-      // helper: activate page by number (1..10)
-      function activate(num){
-        if(typeof num !== 'number') return;
-        if(num < 1) num = 1;
-        if(num > total) num = total;
-        pages.forEach(p => p.classList.remove('active'));
-        const el = document.getElementById('page-' + num);
-        if(el) el.classList.add('active');
-        window.scrollTo({top:0,behavior:'smooth'});
-      }
+  <!-- Página 2 -->
+  <div class="page" id="page2">
+    <h1>Cuestionario 💌</h1>
+    <p>Responde con sinceridad y mucho amor 💕</p>
+    <ul>
+      <li>¿Cuál fue tu primera impresión de mí?</li>
+      <li>¿Qué momento recuerdas más bonito de nosotras?</li>
+      <li>¿Qué te enamoró más de mí?</li>
+      <li>¿Qué sueñas que vivamos juntas?</li>
+      <li>¿Cuál es tu lugar favorito conmigo?</li>
+    </ul>
+    <div class="nav-buttons">
+      <button onclick="prevPage()">Anterior</button>
+      <button onclick="nextPage()">Siguiente</button>
+    </div>
+  </div>
 
-      // Initial sanity: if no page-1 found, log error
-      if(!document.getElementById('page-1')){
-        console.error('No existe el elemento page-1. Asegúrate de que el HTML tenga los ids page-1 .. page-10');
-      }
+  <!-- Página 3 -->
+  <div class="page" id="page3">
+    <h1>Nuestra historia 🌸</h1>
+    <p>El paso del tiempo nos ha unido más cada día. 💞</p>
+    <p>Primer mensaje, primera cita, primera sonrisa, primer "te amo"… cada uno un pedacito de eternidad contigo.</p>
+    <div class="nav-buttons">
+      <button onclick="prevPage()">Anterior</button>
+      <button onclick="nextPage()">Siguiente</button>
+    </div>
+  </div>
 
-      // Wire buttons with data-goto
-      document.querySelectorAll('[data-goto]').forEach(btn => {
-        btn.addEventListener('click', function(e){
-          const target = parseInt(this.getAttribute('data-goto'),10);
-          if(Number.isFinite(target)) activate(target);
-        });
-      });
+  <!-- Página 4 -->
+  <div class="page" id="page4">
+    <h1>Dedicatoria 💖</h1>
+    <p>Mi amor, no hay palabras suficientes para expresar lo que siento por ti.  
+    Eres mi orgullo, mi apoyo, mi todo. Me haces sentir afortunada cada día.  
+    Te amo con todo mi corazón. 🌷</p>
+    <div class="nav-buttons">
+      <button onclick="prevPage()">Anterior</button>
+      <button onclick="nextPage()">Siguiente</button>
+    </div>
+  </div>
 
-      // Actions by data-action
-      document.querySelectorAll('[data-action]').forEach(btn => {
-        const action = btn.getAttribute('data-action');
-        if(action === 'submitAnswers'){
-          btn.addEventListener('click', function(){ submitAnswers(); });
-        } else if(action === 'saveNotes'){
-          btn.addEventListener('click', function(){ saveHerNotes(); });
-        } else if(action === 'music'){
-          btn.addEventListener('click', function(){
-            alert('Si quieres que suene la canción aquí, sube el mp3 al repositorio y dime su nombre exacto; yo lo integro.');
-          });
-        }
-      });
+  <!-- Página 5 -->
+  <div class="page" id="page5">
+    <h1>Tus momentos favoritos 💫</h1>
+    <p>Escribe aquí los momentos más especiales de nuestra relación,  
+    lo que más amas de mí y tus planes conmigo 💞</p>
+    <div class="nav-buttons">
+      <button onclick="prevPage()">Anterior</button>
+      <button onclick="nextPage()">Siguiente</button>
+    </div>
+  </div>
 
-      // populate reasons grid
-      const reasons = [
-"Porque iluminas mis días con tu sonrisa","Por cómo me abrazas cuando más lo necesito","Porque eres mi mejor compañía","Por tu risa que contagia alegría","Porque me entiendes con una mirada","Por tu paciencia infinita","Porque celebras mis éxitos como si fueran tuyos","Por tus detalles inesperados","Porque me inspiras a ser mejor","Por la forma en que cuidas lo que amamos","Porque confío en ti completamente","Por tus ojos que me derriten","Por tus manos que me sostienen","Porque me haces sentir en casa","Por tu honestidad y transparencia","Porque respetas mis tiempos","Por tu sentido del humor","Porque aceptas mis imperfecciones","Por las noches en que me haces soñar","Porque vamos de la mano en todo","Por la ternura con la que hablas","Porque me motivas cuando flaqueo","Por tus abrazos que curan","Porque tus besos son mi refugio","Por tu mirada cómplice","Porque sabes sorprenderme","Por la confianza que me brindas","Porque eres mi cómplice en aventuras","Por cada mensaje lindo que dejas","Porque luchamos juntas por lo que queremos","Por tus consejos sabios","Porque tu risa me hace feliz","Por tu valentía para enfrentar la vida","Porque eres generosa con tu tiempo","Por tus sueños que ahora son nuestros","Porque aprendemos juntas cada día","Por la calma que traes a mi mundo","Porque me recuerdas siempre cuánto valgo","Por tus abrazos al despertar","Porque me motivas a crecer","Por cada detalle que guardo en mi corazón","Porque transformas lo simple en mágico","Por el amor con el que tratas a los demás","Porque me escuchas sin juzgar","Por tus palabras que acarician el alma","Porque tus manos me sostienen fuerte","Por cada proyecto que imaginamos juntas","Porque tu mirada es mi lugar seguro","Por tus ocurrencias que nos hacen reír","Porque respetas mis espacios","Por tu energía positiva","Porque me enseñas a amar mejor","Por los pequeños rituales que creamos","Porque me sorprendes con detalles únicos","Por la complicidad de nuestras miradas","Porque juntas somos un gran equipo","Por tu ternura en los momentos difíciles","Porque me alientas a perseguir mis sueños","Por tu amor incondicional","Porque me ayudas a ver lo bueno","Por los planes locos que imaginamos","Porque me ayudas a calmar mis miedos","Por tu capacidad de perdonar","Porque compartimos risas infinitas","Por tus manos que arropan mi corazón","Porque siempre encuentras la forma de cuidarme","Por la confianza que me das para ser yo","Porque tu voz es mi melodía favorita","Por tus abrazos que hacen todo mejor","Porque me apoyas en todo momento","Por tus consejos sabios y sinceros","Porque tus ojos brillan cuando me ves","Por la belleza de tu alma","Porque juntos crecemos y aprendemos","Por la paz que transmites","Porque tus metas son también nuestras metas","Por la dulzura con la que me miras","Porque tu amor me hace valiente","Por los recuerdos que vamos guardando","Porque me emociono solo de pensar en ti","Por tu capacidad de sorprenderme siempre","Porque me entiendes sin palabras","Por la alegría que traes a mis días","Porque aceptas mi forma de ser","Por los planes que aún nos faltan por cumplir","Porque juntos transformamos los miedos en ganas","Por tu ternura en cada gesto","Porque contigo todo toma sentido","Por ser mi compañera de vida","Porque construimos sueños y realidades","Por tu humildad y grandeza","Porque me completas de formas que no imaginé","Por tus abrazos al final del día","Porque eres mi hogar, mi paz, mi risa","Porque tu mirada me guía","Por la confianza que transmites","Por cada gesto que demuestra tu amor","Porque tu presencia transforma los días grises","Por el brillo que traes a mis mañanas","Porque juntos representamos fuerza y ternura","Por la forma en que me cuidas sin que lo pida","Porque eres el mejor lugar para volver","Por cada palabra que me regala calma","Porque haces que todo valga la pena","Por tu sinceridad","Por tu ternura al dormir","Por tus abrazos cuando tengo miedo","Por las canciones que me dedicas","Por cada paseo a tu lado","Por el cariño que pones en lo cotidiano","Por tu forma honesta de querer","Por la forma en que me animas","Por los pequeños regalos del día a día","Por cada mañana que comienzo contigo"
-      ];
-      const grid = document.
+  <!-- Página 6 -->
+  <div class="page" id="page6">
+    <h1>Mis planes contigo 🕊️</h1>
+    <p>Este tiempo que llevo contigo ha sido todo un mar de ilusiones...  
+    En todos mis planes estás tú porque eres la mujer de mi vida,  
+    con quien quiero cumplir mis sueños, formar una familia y compartir cada logro. 💖</p>
+    <div class="nav-buttons">
+      <button onclick="prevPage()">Anterior</button>
+      <button onclick="nextPage()">Siguiente</button>
+    </div>
+  </div>
+
+  <!-- Página 7 -->
+  <div class="page" id="page7">
+    <h1>100 razones para amarte 💘</h1>
+    <ul id="razones"></ul>
+    <div class="nav-buttons">
+      <button onclick="prevPage()">Anterior</button>
+      <button onclick="nextPage()">Siguiente</button>
+    </div>
+  </div>
+
+  <!-- Página 8 -->
+  <div class="page" id="page8">
+    <h1>La fórmula del amor 🧪</h1>
+    <div class="formula">
+      <h3>💞 Amor = (Confianza + Respeto) × Cariño²</h3>
+      <p>Si uno falla, el resultado disminuye...</p>
+      <p>Pero si todo se mantiene, el amor crece exponencialmente. 💖</p>
+    </div>
+    <div class="nav-buttons">
+      <button onclick="prevPage()">Anterior</button>
+      <button onclick="nextPage()">Siguiente</button>
+    </div>
+  </div>
+
+  <!-- Página 9 -->
+  <div class="page" id="page9">
+    <h1>Te amo 💞</h1>
+    <p>Mi amor, cada palabra, cada detalle de esta página está hecho con todo mi corazón.  
+    Eres mi mayor orgullo, mi razón de ser, la dueña de mi sonrisa.  
+    No hay día que no piense en ti. Te amo más de lo que las palabras pueden expresar. 🌹</p>
+    <div class="nav-buttons">
+      <button onclick="prevPage()">Anterior</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
