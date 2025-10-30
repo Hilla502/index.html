@@ -1,86 +1,62 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Cuaderno de Amor — Tus ojitos lindos 💖</title>
+<title>La mujer de mi vida 💖</title>
 <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#fff7f8;
-    --accent:#ff6f98;
-    --accent-dark:#d24473;
-    --ink:#2b1d20;
-    --card:#fff0f4;
-    --muted:#8c6d74;
-    --shadow: 0 10px 30px rgba(17,10,12,0.25);
+    --paper:#fff6f6;
+    --accent:#ff5c8d;
+    --accent-2:#e96b9a;
+    --ink:#3b2430;
+    --muted:#94646f;
+    --card:#fff3f6;
+    --shadow: 0 12px 30px rgba(60,20,30,0.12);
   }
-
   *{box-sizing:border-box}
-  body{
-    margin:0;
-    font-family: Poppins, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    background: linear-gradient(180deg,#fff1f3,#fffaf9);
-    color:var(--ink);
-  }
-
-  .wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px;}
-
+  html,body{height:100%;margin:0;font-family: Poppins, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;background:linear-gradient(180deg,#fff4f8,#fffafc);color:var(--ink)}
+  .wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:30px;}
   .notebook{
     width:100%;max-width:980px;background:
-    repeating-linear-gradient(180deg, rgba(255,255,255,0.75) 0 48px, rgba(0,0,0,0.01) 48px 49px),
-    var(--paper);
+      repeating-linear-gradient(180deg, rgba(255,255,255,0.75) 0 46px, rgba(0,0,0,0.01) 46px 47px),
+      var(--paper);
     border-radius:18px;box-shadow:var(--shadow);padding:28px;position:relative;overflow:hidden;
   }
-
-  .spiral{position:absolute;left:-26px;top:30px;height:85%;width:52px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start}
-  .spiral .ring{width:14px;height:14px;border:3px solid #f0bac7;border-radius:50%;margin:10px 0;background:#fff}
-
-  .ribbon{position:absolute;right:22px;top:16px;background:linear-gradient(90deg,var(--accent),var(--accent-dark));color:#fff;padding:10px 14px;border-radius:12px;font-weight:700;box-shadow:0 8px 22px rgba(210,70,110,0.14)}
-
-  /* Page layout */
+  .spiral{position:absolute;left:-26px;top:26px;height:86%;width:52px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start}
+  .spiral .ring{width:14px;height:14px;border:3px solid #f1b9c9;border-radius:50%;margin:10px 0;background:#fff}
+  .ribbon{position:absolute;right:22px;top:14px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;padding:8px 12px;border-radius:12px;font-weight:700;box-shadow:0 8px 22px rgba(233,107,154,0.12)}
+  /* page system */
   .page{display:none}
   .page.active{display:block;animation:pageIn .45s ease}
-  @keyframes pageIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-
-  header.cover{text-align:center;padding:18px 8px;margin-bottom:12px}
-  header.cover h1{font-family:'Parisienne',cursive;font-size:46px;margin:6px 0;color:var(--accent-dark);text-shadow:0 2px 0 rgba(255,255,255,0.3)}
-  .photo-wrap{display:flex;flex-direction:column;align-items:center;gap:12px;margin-top:10px}
-  .photo{width:210px;height:210px;border-radius:18px;overflow:hidden;border:6px solid #fff;background:#ffe9f1;box-shadow:0 10px 30px rgba(210,70,110,0.08)}
+  @keyframes pageIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  header.cover{text-align:center;padding:8px 6px;margin-bottom:12px}
+  header.cover h1{font-family:'Parisienne',cursive;font-size:48px;margin:6px 0;color:var(--accent-2);text-shadow:0 2px 0 rgba(255,255,255,0.4)}
+  .photo-wrap{display:flex;flex-direction:column;align-items:center;gap:12px;margin-top:6px}
+  .photo{width:220px;height:220px;border-radius:18px;overflow:hidden;border:6px solid #fff;background:#ffeef6;box-shadow:0 14px 40px rgba(233,107,154,0.08)}
   .photo img{width:100%;height:100%;object-fit:cover;display:block}
-  .subtitle{max-width:680px;margin:auto;background:linear-gradient(180deg,#fff,#fff6fb);padding:14px;border-radius:12px;border:1px dashed rgba(210,70,110,0.06);color:var(--muted);font-size:15px}
-
+  .subtitle{max-width:720px;margin:auto;background:linear-gradient(180deg,#fff,#fff6fb);padding:14px;border-radius:12px;border:1px dashed rgba(233,107,154,0.08);color:var(--muted);font-size:15px}
   .controls{display:flex;gap:10px;justify-content:center;margin-top:16px;flex-wrap:wrap}
-  .btn{background:linear-gradient(180deg,var(--accent),var(--accent-dark));color:white;padding:10px 18px;border-radius:14px;border:none;cursor:pointer;font-weight:700;box-shadow:0 8px 20px rgba(210,70,110,0.16)}
-  .btn.secondary{background:transparent;color:var(--accent-dark);border:2px solid rgba(210,70,110,0.12);box-shadow:none}
-  .btn.ghost{background:transparent;border:0;color:var(--accent-dark)}
-
-  /* Form */
+  .btn{background:linear-gradient(180deg,var(--accent),var(--accent-2));color:white;padding:10px 18px;border-radius:14px;border:none;cursor:pointer;font-weight:700;box-shadow:0 8px 20px rgba(233,107,154,0.16)}
+  .btn.secondary{background:transparent;color:var(--accent-2);border:2px solid rgba(233,107,154,0.12);box-shadow:none}
+  .btn.ghost{background:transparent;border:0;color:var(--accent-2)}
   .form-card{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(0,0,0,0.03);box-shadow:0 8px 22px rgba(0,0,0,0.04)}
-  label{font-weight:700;color:var(--accent-dark);display:block;margin-bottom:8px}
+  label{font-weight:700;color:var(--accent-2);display:block;margin-bottom:8px}
   input[type="text"],textarea,select{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(0,0,0,0.06);background:rgba(255,255,255,0.95);font-size:15px;color:var(--ink)}
   textarea{min-height:110px;resize:vertical}
-
-  /* timeline */
   .timeline{display:grid;gap:14px;margin-top:12px}
   .timeline .card{background:linear-gradient(180deg,#fff,#fffaf6);padding:14px;border-radius:12px;border-left:6px solid var(--accent);box-shadow:0 10px 22px rgba(0,0,0,0.04)}
-  .timeline .card h3{margin:0 0 8px 0;color:var(--accent-dark)}
+  .timeline .card h3{margin:0 0 8px 0;color:var(--accent-2)}
   .muted{color:var(--muted);font-size:0.98rem}
-
-  /* reasons */
-  .reasons-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .reasons-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
   .reason{background:#fff;padding:10px;border-radius:10px;color:#6b2f3f;font-weight:600;text-align:center;border:1px solid rgba(0,0,0,0.04)}
-
-  /* formula area */
   .formula-wrap{display:flex;flex-direction:column;align-items:center;gap:12px;padding:12px}
   .formula-box{background:linear-gradient(180deg,#fff,#fffaf6);padding:12px;border-radius:12px;border:1px dashed rgba(0,0,0,0.06);box-shadow:0 8px 18px rgba(0,0,0,0.04)}
-  .handwritten{font-family:'Parisienne',cursive;color:var(--accent-dark);font-size:20px}
-
-  /* final */
+  .handwritten{font-family:'Parisienne',cursive;color:var(--accent-2);font-size:20px}
   .final{padding:18px;border-radius:12px;background:linear-gradient(180deg,#fff,#fff3f7);box-shadow:0 10px 22px rgba(0,0,0,0.04)}
-  .final h2{color:var(--accent-dark);margin-top:0}
-
+  .final h2{color:var(--accent-2);margin-top:0}
+  .small{font-size:0.85rem;color:var(--muted)}
   /* responsive */
   @media (max-width:720px){
     .reasons-grid{grid-template-columns:repeat(2,1fr)}
@@ -91,59 +67,57 @@
     .notebook{padding:14px}
     header.cover h1{font-size:34px}
   }
-
-  /* floating hearts (subtle) */
-  .float-heart{position:fixed;z-index:5;pointer-events:none;font-size:20px;opacity:0.95;animation:floatUp 5s linear forwards}
-  @keyframes floatUp{0%{transform:translateY(0) scale(0.7);opacity:0.9}100%{transform:translateY(-700px) scale(1.4);opacity:0}}
-
+  /* floating hearts */
+  .float-heart{position:fixed;z-index:6;pointer-events:none;font-size:20px;opacity:0.95;animation:floatUp 6s linear forwards}
+  @keyframes floatUp{0%{transform:translateY(0) scale(0.7);opacity:0.9}100%{transform:translateY(-760px) scale(1.4);opacity:0}}
+  /* pager buttons small */
+  .pager{display:flex;gap:12px;justify-content:center;margin-top:18px}
+  .pager .btn {padding:10px 14px;border-radius:12px}
 </style>
 </head>
 <body>
   <div class="wrap">
-    <div class="notebook">
-      <div class="spiral" aria-hidden="true">
-        <div class="ring"></div><div class="ring"></div><div class="ring"></div><div class="ring"></div><div class="ring"></div>
-      </div>
+    <div class="notebook" role="main">
+      <div class="spiral" aria-hidden="true"><div class="ring"></div><div class="ring"></div><div class="ring"></div><div class="ring"></div><div class="ring"></div></div>
       <div class="ribbon">Cuaderno de nosotras</div>
 
       <!-- PAGE 1: Portada -->
-      <section id="page-1" class="page active">
+      <section id="page-1" class="page active" aria-label="Portada">
         <header class="cover">
           <h1>La mujer de mi vida</h1>
           <div class="photo-wrap">
             <div class="photo"><img id="coverPhoto" src="ella.jpg" alt="La mujer de mi vida"></div>
-            <div class="subtitle">Tus ojitos lindos 🌷, mi razón de sonreír cada día. Esta libreta es un pedacito de mi corazón para ti 💕</div>
+            <div class="subtitle">Tus ojitos lindos 🌷 — mi razón de sonreír cada día. Esta libreta es un pedacito de mi corazón para ti 💕</div>
           </div>
-
-          <div class="controls" style="margin-top:18px">
-            <button id="audioBtn" class="btn">🎵 Reproducir: Falling in Love With You</button>
+          <div class="controls">
+            <!-- Music button left empty so user can add song later -->
+            <button id="musicBtn" class="btn secondary" title="Agregar canción (opcional)">🎵 Música (opcional)</button>
             <button class="btn" onclick="goTo(2)">Siguiente ➜</button>
           </div>
-
-          <div style="margin-top:8px;text-align:center" class="muted small">Si quieres reproducción automática desde aquí, sube el archivo <code>falling_in_love_with_you.mp3</code> al repo (ya lo tienes) y pulsa reproducir.</div>
+          <div class="small" style="margin-top:10px">Si deseas reproducir música dentro de la página: sube el archivo mp3 al repo y puedo integrarlo aquí.</div>
         </header>
       </section>
 
       <!-- PAGE 2: Cuestionario -->
-      <section id="page-2" class="page">
+      <section id="page-2" class="page" aria-label="Cuestionario">
         <div class="form-card">
           <h2 class="handwritten" style="text-align:center">📝 Cuestionario de Recuerdos</h2>
           <div style="display:grid;gap:12px;margin-top:8px">
             <div>
               <label for="q1">1. ¿Dónde fue el primer beso?</label>
-              <input id="q1" type="text" placeholder="Escribe aquí...">
+              <input id="q1" type="text" placeholder="Escribe aquí... (ej: En mi casa)">
             </div>
             <div>
               <label for="q2">2. ¿Qué color de pantalón llevaba puesta Hillary?</label>
-              <input id="q2" type="text" placeholder="Escribe aquí...">
+              <input id="q2" type="text" placeholder="Escribe aquí... (ej: gris)">
             </div>
             <div>
               <label for="q3">3. ¿En qué mes fue su primera cita?</label>
-              <input id="q3" type="text" placeholder="Escribe aquí...">
+              <input id="q3" type="text" placeholder="Escribe aquí... (ej: julio)">
             </div>
             <div>
               <label for="q4">4. ¿Dónde fue su primera cita?</label>
-              <input id="q4" type="text" placeholder="Escribe aquí...">
+              <input id="q4" type="text" placeholder="Escribe aquí... (ej: Chía)">
             </div>
             <div>
               <label for="q5">5. ¿Quién dijo “te amo” primero?</label>
@@ -155,7 +129,7 @@
             </div>
             <div>
               <label for="q6">6. ¿Qué obsequio te dio ese día?</label>
-              <input id="q6" type="text" placeholder="Escribe aquí...">
+              <input id="q6" type="text" placeholder="Escribe aquí... (ej: Un collar)">
             </div>
             <div>
               <label for="q7">7. ¿Cuál fue el detalle que más recuerdas?</label>
@@ -175,7 +149,7 @@
       </section>
 
       <!-- PAGE 3: Timeline -->
-      <section id="page-3" class="page">
+      <section id="page-3" class="page" aria-label="Línea de tiempo">
         <h2 class="handwritten" style="text-align:center">🕰️ Nuestra línea de tiempo</h2>
         <div id="timelineArea" class="timeline" style="margin-top:12px"></div>
         <div class="controls" style="margin-top:16px">
@@ -185,7 +159,7 @@
       </section>
 
       <!-- PAGE 4: Dedicatoria -->
-      <section id="page-4" class="page">
+      <section id="page-4" class="page" aria-label="Dedicatoria">
         <h2 class="handwritten" style="text-align:center">💌 Una dedicatoria para ti</h2>
         <div class="final" style="margin-top:12px">
           <h2>Para ti, mi amor</h2>
@@ -201,7 +175,7 @@
       </section>
 
       <!-- PAGE 5: Ella escribe -->
-      <section id="page-5" class="page">
+      <section id="page-5" class="page" aria-label="Tus momentos">
         <h2 class="handwritten" style="text-align:center">🖊️ Tus momentos y planes</h2>
         <div class="form-card" style="margin-top:12px">
           <label for="moments">Escribe los momentos más especiales para ti</label>
@@ -221,7 +195,7 @@
       </section>
 
       <!-- PAGE 6: Mis planes (tu texto) -->
-      <section id="page-6" class="page">
+      <section id="page-6" class="page" aria-label="Mis planes">
         <h2 class="handwritten" style="text-align:center">📜 Mis planes contigo</h2>
         <div class="card" style="margin-top:12px;background:linear-gradient(180deg,#fff,#fff6f6);padding:16px;border-radius:12px;box-shadow:0 8px 22px rgba(0,0,0,0.04)">
           <p>“Este tiempo que llevo contigo ha sido todo un mar de ilusiones, en todos mis planes estás tú porque eres la mujer de mi vida, con quién lo quiero todo! Quiero que juntas nos superemos, cumplamos nuestro más grandes anhelos y compartamos cada logro juntas, quiero formar una vida contigo, quiero entregarte mi tiempo, mis días. Quiero tener contigo una familia, una estabilidad, todo lo que quiero es contigo porque sin ti no tendría sentido.”</p>
@@ -233,7 +207,7 @@
       </section>
 
       <!-- PAGE 7: 100 razones -->
-      <section id="page-7" class="page">
+      <section id="page-7" class="page" aria-label="100 razones">
         <h2 class="handwritten" style="text-align:center">💯 100 razones para amarte</h2>
         <div id="reasonsGrid" class="reasons-grid" style="margin-top:12px"></div>
         <div class="controls" style="margin-top:16px">
@@ -242,96 +216,51 @@
         </div>
       </section>
 
-      <!-- PAGE 8: LA FÓRMULA DEL AMOR (RECREADA) -->
-      <section id="page-8" class="page">
+      <!-- PAGE 8: La Fórmula del Amor -->
+      <section id="page-8" class="page" aria-label="Fórmula del amor">
         <h2 class="handwritten" style="text-align:center">🧪 La Fórmula del Amor</h2>
 
         <div class="formula-wrap">
           <div class="formula-box" role="img" aria-label="Fórmula del amor dibujada">
-            <!-- SVG que recrea el cuaderno: corazón, ecuaciones, molécula y cajitas Te - Am - O -->
-            <svg width="100%" viewBox="0 0 900 720" xmlns="http://www.w3.org/2000/svg" style="max-width:900px">
-              <!-- background subtle grid like squared paper -->
+            <!-- SVG recreación -->
+            <svg width="100%" viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" style="max-width:900px">
               <defs>
-                <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
-                  <path d="M20 0H0V20" fill="none" stroke="#f0e6e8" stroke-width="0.8"/>
-                </pattern>
-                <linearGradient id="gHeart" x1="0" x2="1">
+                <linearGradient id="g1" x1="0" x2="1">
                   <stop offset="0" stop-color="#ff9dbb"/>
                   <stop offset="1" stop-color="#ff5c8d"/>
                 </linearGradient>
-                <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
-                  <feGaussianBlur stdDeviation="3" result="blur"/>
-                  <feBlend in="SourceGraphic" in2="blur"/>
-                </filter>
               </defs>
 
-              <!-- paper grid -->
-              <rect x="0" y="0" width="100%" height="100%" fill="url(#grid)"></rect>
+              <rect x="0" y="0" width="900" height="520" fill="#fff6f7"/>
+              <text x="30" y="40" font-family="Parisienne, cursive" font-size="28" fill="#6b2740">La Fórmula del Amor ❤</text>
 
-              <!-- Title handwritten -->
-              <text x="28" y="40" font-family="Parisienne, cursive" font-size="30" fill="#6b2740">La Fórmula del Amor ❤</text>
-
-              <!-- Heart curve (graph-like) -->
-              <g transform="translate(40,80)">
-                <path d="M120 20 C90 -40 10 -10 40 70 C60 120 120 160 160 160 C200 160 260 120 280 70 C310 -10 230 -40 200 20 Z"
-                      stroke="url(#gHeart)" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#soft)"/>
+              <!-- heart curve -->
+              <g transform="translate(40,60)">
+                <path d="M120 20 C90 -40 10 -10 40 70 C60 120 120 160 160 160 C160 160 220 120 240 70 C270 -10 190 -40 160 20 Z"
+                      stroke="url(#g1)" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
                 <text x="10" y="200" font-size="14" fill="#4b2a3b">x² + (y - ³√x²)² = 1</text>
                 <text x="10" y="220" font-size="14" fill="#4b2a3b">y = 1/x    x = -3 · sin(y)</text>
+                <text x="10" y="240" font-size="13" fill="#7a4a56">x = te + amo</text>
               </g>
 
-              <!-- Equations block on right -->
               <g transform="translate(420,60)">
-                <rect x="0" y="0" width="420" height="160" rx="10" ry="10" fill="#fff7f8" stroke="#f1d0da" />
+                <rect x="0" y="0" width="420" height="160" rx="10" ry="10" fill="#fffaf7" stroke="#f1d0da" />
                 <text x="18" y="28" font-size="16" fill="#6b2740" font-family="Parisienne, cursive">x = te + amo</text>
                 <text x="18" y="54" font-size="13" fill="#6b2740">a + e - a·x = a</text>
-                <text x="18" y="72" font-size="13" fill="#6b2740">y = 1/x    x² + y² = g</text>
-                <text x="12" y="110" font-size="12" fill="#9b5c6b" >i < 3 < u  &nbsp;&nbsp;  (notas cariñosas)</text>
+                <text x="18" y="74" font-size="13" fill="#6b2740">y = 1/x    x² + y² = g</text>
+                <text x="18" y="110" font-size="12" fill="#9b5c6b">notas cariñosas</text>
               </g>
 
-              <!-- chemical-like drawing bottom-left -->
-              <g transform="translate(40,300)" stroke="#6b2a3b" stroke-width="2" fill="none">
-                <!-- hexagon-ish stylized -->
-                <path d="M120 20 L160 40 L160 80 L120 100 L80 80 L80 40 Z" stroke="#7d2a3d" fill="#fff5f7"/>
-                <circle cx="120" cy="60" r="6" fill="#ff8aa8" stroke="none"/>
-                <text x="30" y="20" font-size="14" fill="#6b2740">químico</text>
-                <text x="30" y="100" font-size="14" fill="#6b2740">amor</text>
-                <!-- little hearts around -->
-                <path d="M20 50 C22 46 28 46 30 50 C32 54 20 62 20 62 C20 62 8 54 10 50 C12 46 18 46 20 50 Z" fill="#ff95b0" transform="translate(10,10) scale(0.5)"/>
-              </g>
-
-              <!-- TE AM O boxes bottom center -->
-              <g transform="translate(300,360)">
-                <!-- boxes -->
-                <rect x="20" y="10" width="70" height="70" rx="6" ry="6" fill="#fffaf6" stroke="#e8b7c4" />
-                <rect x="110" y="10" width="70" height="70" rx="6" ry="6" fill="#fffaf6" stroke="#e8b7c4" />
-                <rect x="200" y="10" width="70" height="70" rx="6" ry="6" fill="#fffaf6" stroke="#e8b7c4" />
+              <g transform="translate(260,290)">
+                <rect x="20" y="10" width="70" height="70" rx="8" fill="#fffaf6" stroke="#e8b7c4"/>
+                <rect x="110" y="10" width="70" height="70" rx="8" fill="#fffaf6" stroke="#e8b7c4"/>
+                <rect x="200" y="10" width="70" height="70" rx="8" fill="#fffaf6" stroke="#e8b7c4"/>
                 <text x="40" y="55" font-size="28" fill="#a23050" font-weight="700">Te</text>
                 <text x="130" y="55" font-size="28" fill="#a23050" font-weight="700">Am</text>
                 <text x="220" y="55" font-size="28" fill="#a23050" font-weight="700">O</text>
-                <!-- tiny hearts inside boxes -->
-                <g fill="#ff5c8d">
-                  <circle cx="62" cy="35" r="5"/>
-                  <circle cx="152" cy="35" r="5"/>
-                  <circle cx="242" cy="35" r="5"/>
-                </g>
-                <text x="18" y="96" font-size="12" fill="#6b2740">Raro de encontrar — nos mantiene vivas</text>
               </g>
 
-              <!-- right margin scribbles vertical -->
-              <g transform="translate(740,240)">
-                <text x="0" y="0" font-size="14" fill="#6b2740">y = 1/x</text>
-                <text x="0" y="26" font-size="14" fill="#6b2740">x² + y² = g</text>
-                <text x="0" y="52" font-size="14" fill="#6b2740">x = -3(sin y)</text>
-
-                <!-- small vertical heart shape -->
-                <g transform="translate(20,100)" stroke="#ff5c8d" stroke-width="4" fill="none">
-                  <path d="M0 40 C10 0 40 0 40 40 C40 70 0 90 0 130" stroke-linecap="round" stroke-linejoin="round" />
-                </g>
-              </g>
-
-              <!-- footer note -->
-              <text x="28" y="700" font-size="12" fill="#9b5c6b">Recreación estilo cuaderno — hecha con cariño ✨</text>
-
+              <text x="28" y="500" font-size="12" fill="#9b5c6b">Recreación estilo cuaderno — hecha con cariño ✨</text>
             </svg>
           </div>
         </div>
@@ -342,8 +271,8 @@
         </div>
       </section>
 
-      <!-- PAGE 9: reaction to formula -->
-      <section id="page-9" class="page">
+      <!-- PAGE 9: Comentario fórmula -->
+      <section id="page-9" class="page" aria-label="Comentario fórmula">
         <h2 class="handwritten" style="text-align:center">✍️ ¿Qué te inspira esta fórmula?</h2>
         <div class="form-card" style="margin-top:12px">
           <label for="formulaComment">Escribe lo que te transmite esta fórmula del amor</label>
@@ -356,7 +285,7 @@
       </section>
 
       <!-- PAGE 10: Dedicatoria final -->
-      <section id="page-10" class="page">
+      <section id="page-10" class="page" aria-label="Dedicatoria final">
         <h2 class="handwritten" style="text-align:center">💖 Dedicatoria Final</h2>
         <div class="final" style="margin-top:12px">
           <h2>Para ti, mis “tus ojitos lindos”</h2>
@@ -372,4 +301,61 @@
         </div>
 
         <div class="controls" style="margin-top:12px">
+          <button class="btn secondary" onclick="goTo(9)">◀ Atrás</button>
+          <button class="btn" onclick="goTo(1)">Volver al inicio</button>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+<script>
+  // Navigation function
+  function goTo(n){
+    // clamp 1..10
+    if(n < 1) n = 1;
+    if(n > 10) n = 10;
+    document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+    const el = document.getElementById('page-' + n);
+    if(el) el.classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+
+  // Attach hands-free small helper: map pages 1..10 for direct access
+  // saveAnswers builds timeline and uses defaults if empty
+  function saveAnswers(){
+    const defaults = {
+      q1: 'En mi casa (nuestro primer beso)',
+      q2: 'pantalón gris',
+      q3: 'julio',
+      q4: 'Chía',
+      q5: 'ella',
+      q6: 'un collar',
+      q7: 'tu sonrisa nerviosa',
+      q8: 'mágico'
+    };
+    const q1 = document.getElementById('q1').value.trim() || defaults.q1;
+    const q2 = document.getElementById('q2').value.trim() || defaults.q2;
+    const q3 = document.getElementById('q3').value.trim() || defaults.q3;
+    const q4 = document.getElementById('q4').value.trim() || defaults.q4;
+    const q5 = document.getElementById('q5').value || defaults.q5;
+    const q6 = document.getElementById('q6').value.trim() || defaults.q6;
+    const q7 = document.getElementById('q7').value.trim() || defaults.q7;
+    const q8 = document.getElementById('q8').value.trim() || defaults.q8;
+
+    const timelineArea = document.getElementById('timelineArea');
+    timelineArea.innerHTML = '';
+
+    const addCard = (title, text) => {
+      const d = document.createElement('div');
+      d.className = 'card';
+      d.innerHTML = `<h3>${title}</h3><p class="muted">${text}</p>`;
+      timelineArea.appendChild(d);
+    };
+
+    addCard('💋 El día que nos conocimos', `${q1} (recuerdo: ${q2}).`);
+    addCard('🍃 Nuestra primera cita', `${q3} — ${q4}.`);
+    addCard('💞 Quién dijo "te amo" primero', `${q5 === 'ella' ? 'Ella fue la primera en decir "te amo".' : 'Fui yo quien lo dijo primero.'}`);
+    addCard('🎁 El obsequio especial', `${q6} — un símbolo que llevo siempre.`);
+    addCard('✨ Detalle que más recuerdo', `${q7}`);
    
