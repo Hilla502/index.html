@@ -1,209 +1,238 @@
+
+      
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Para el amor de mi vida 💖</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nuestra Historia 💕</title>
   <style>
     body {
+      background-color: #0f0f0f;
+      color: #f5f5f5;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to bottom right, #ffd6e8, #ffeef8);
-      color: #4a0033;
       margin: 0;
-      text-align: center;
-      overflow-x: hidden;
+      padding: 0;
     }
+
     header {
+      text-align: center;
       padding: 40px 20px;
+      background: linear-gradient(135deg, #ff5c8d, #b30059);
+      color: white;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
     }
-    header img {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid #ffb6c1;
-      box-shadow: 0 0 10px #ff80aa;
+
+    header h1 {
+      font-size: 2.3em;
+      margin-bottom: 10px;
     }
-    h1 {
-      font-size: 2em;
-      color: #ff4081;
-      margin-top: 10px;
-    }
-    .dedicatoria {
-      max-width: 500px;
-      margin: 20px auto;
-      background: #fff0f6;
-      padding: 20px;
-      border-radius: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+    header p {
       font-size: 1.1em;
+      opacity: 0.9;
     }
-    .timeline {
-      margin: 40px auto;
-      max-width: 600px;
+
+    section {
+      margin: 30px auto;
+      width: 90%;
+      max-width: 800px;
     }
-    .timeline-item {
-      background: #fff;
-      margin: 20px;
-      padding: 15px;
+
+    .card {
+      background-color: #1a1a1a;
       border-radius: 15px;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-      text-align: left;
-    }
-    .timeline-item h3 {
-      color: #e91e63;
-    }
-    .test {
-      margin: 40px auto;
-      max-width: 500px;
-      background: #fff;
-      border-radius: 20px;
       padding: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
     }
+
+    h2 {
+      color: #ff5c8d;
+      margin-bottom: 10px;
+    }
+
+    p {
+      line-height: 1.6;
+      font-size: 1em;
+    }
+
+    /* Cuestionario */
+    form {
+      background-color: #1a1a1a;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+    }
+
+    form h2 {
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .pregunta {
+      margin-bottom: 15px;
+    }
+
+    .pregunta label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .pregunta input[type="text"], .pregunta select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      background-color: #2a2a2a;
+      color: #fff;
+      font-size: 1em;
+    }
+
     button {
-      background-color: #ff80aa;
+      background-color: #ff5c8d;
       border: none;
       color: white;
-      padding: 10px 20px;
-      margin-top: 10px;
+      padding: 12px 20px;
       border-radius: 10px;
-      font-size: 1em;
       cursor: pointer;
+      display: block;
+      margin: 20px auto 0 auto;
+      font-size: 1em;
       transition: 0.3s;
     }
+
     button:hover {
-      background-color: #ff5c9a;
-      transform: scale(1.05);
+      background-color: #e44a78;
     }
-    .historia {
-      display: none;
-      background: #fff0f6;
-      padding: 20px;
+
+    /* Dedicatoria */
+    .dedicatoria {
+      margin: 40px 0;
+    }
+
+    .dedicatoria .card {
+      background-color: #1a1a1a;
       border-radius: 15px;
-      margin-top: 20px;
-      animation: fadeIn 1s ease-in-out;
-    }
-    #finalMensaje {
-      display: none;
-      font-size: 1.3em;
-      color: #e91e63;
-      background: #fff0f6;
       padding: 20px;
-      border-radius: 20px;
-      margin: 30px auto;
-      max-width: 500px;
-      animation: fadeIn 2s ease-in-out;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      color: #f5f5f5;
+      box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+      text-align: left;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes heartFloat {
-      0% { transform: translateY(0) scale(1); opacity: 1; }
-      100% { transform: translateY(-300px) scale(1.5); opacity: 0; }
-    }
-
-    .heart {
-      position: fixed;
-      bottom: 0;
-      left: 50%;
-      font-size: 20px;
-      color: #ff5c9a;
-      animation: heartFloat 4s linear forwards;
+    .dedicatoria h2 {
+      color: #ff5c8d;
+      margin-bottom: 15px;
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="https://i.imgur.com/s8H0ZtQ.jpeg" alt="Ella 💕">
-    <h1>El amor de mi vida 💖</h1>
-    <p class="dedicatoria">Eres mi razón favorita para sonreír cada día. Esta página es solo un pequeño recordatorio de cuánto te amo y de lo especial que eres para mí 💞</p>
+    <h1>💞 Nuestra Historia 💞</h1>
+    <p>Un recorrido por los momentos más lindos que vivimos juntas</p>
   </header>
 
-  <section class="timeline">
-    <h2>🌷 Nuestra historia</h2>
-    <div class="timeline-item">
-      <h3>💋 El día que nos conocimos</h3>
-      <p>Ese día fue mágico, nuestro primer beso fue en mi casa. Yo llevaba puesto un pantalón gris, y desde entonces supe que algo hermoso comenzaba.</p>
+  <!-- CUESTIONARIO -->
+  <section>
+    <form>
+      <h2>📝 Cuestionario de Recuerdos</h2>
+
+      <div class="pregunta">
+        <label>1. ¿Dónde fue el primer beso?</label>
+        <input type="text" placeholder="Ej: En mi casa" />
+      </div>
+
+      <div class="pregunta">
+        <label>2. ¿Qué color de pantalón llevaba puesta Hillary?</label>
+        <input type="text" placeholder="Ej: Gris" />
+      </div>
+
+      <div class="pregunta">
+        <label>3. ¿En qué mes fue su primera cita?</label>
+        <input type="text" placeholder="Ej: Julio" />
+      </div>
+
+      <div class="pregunta">
+        <label>4. ¿Dónde fue su primera cita?</label>
+        <input type="text" placeholder="Ej: Chía" />
+      </div>
+
+      <div class="pregunta">
+        <label>5. ¿Quién dijo “te amo” primero?</label>
+        <select>
+          <option value="">Selecciona una opción</option>
+          <option value="ella">Ella</option>
+          <option value="yo">Yo</option>
+        </select>
+      </div>
+
+      <div class="pregunta">
+        <label>6. ¿Qué obsequio te dio ese día?</label>
+        <input type="text" placeholder="Ej: Un collar" />
+      </div>
+
+      <button type="button">Enviar respuestas 💌</button>
+    </form>
+  </section>
+
+  <!-- RESPUESTAS -->
+  <section>
+    <div class="card">
+      <h2>💋 El día que nos conocimos</h2>
+      <p>
+        Ese día fue mágico, nuestro primer beso fue en mi casa. 
+        Yo llevaba puesto un pantalón gris, y desde entonces supe 
+        que algo hermoso comenzaba.
+      </p>
     </div>
-    <div class="timeline-item">
-      <h3>🍃 Nuestra primera cita</h3>
-      <p>Fue en julio, en Chía. Un día lleno de risas, nervios y amor. Todo era perfecto, como si el tiempo se detuviera solo para nosotros.</p>
+
+    <div class="card">
+      <h2>🍃 Nuestra primera cita</h2>
+      <p>
+        Fue en julio, en Chía. Un día lleno de risas, nervios y amor. 
+        Todo era perfecto, como si el tiempo se detuviera solo para nosotras.
+      </p>
     </div>
-    <div class="timeline-item">
-      <h3>💞 La primera vez que dijiste “Te amo”</h3>
-      <p>Fuiste tú quien lo dijo primero, y ese momento quedó grabado en mi corazón para siempre.</p>
+
+    <div class="card">
+      <h2>💞 La primera vez que dijiste “Te amo”</h2>
+      <p>
+        Fuiste tú quien lo dijo primero, y ese momento quedó grabado 
+        en mi corazón para siempre.
+      </p>
     </div>
-    <div class="timeline-item">
-      <h3>🎁 El obsequio más especial</h3>
-      <p>Aquel collar que me regalaste, que nunca me quito, porque es más que un accesorio: es un pedacito de ti conmigo siempre.</p>
+
+    <div class="card">
+      <h2>🎁 El obsequio más especial</h2>
+      <p>
+        Aquel collar que me regalaste, que nunca me quito, 
+        porque es más que un accesorio: es un pedacito de ti conmigo siempre.
+      </p>
     </div>
   </section>
 
-  <section class="test">
-    <h2>💌 Cuestionario del amor</h2>
-    <div id="quiz">
-      <p><b>1. ¿Dónde fue nuestro primer beso?</b></p>
-      <button onclick="mostrarHistoria(1)">a) En mi casa</button>
-      <button onclick="mostrarHistoria(1)">b) En el parque</button>
-
-      <p><b>2. ¿En qué mes fue nuestra primera cita?</b></p>
-      <button onclick="mostrarHistoria(2)">a) Junio</button>
-      <button onclick="mostrarHistoria(2)">b) Julio</button>
-
-      <p><b>3. ¿Quién dijo “Te amo” primero?</b></p>
-      <button onclick="mostrarHistoria(3)">a) Tú</button>
-      <button onclick="mostrarHistoria(3)">b) Yo</button>
-
-      <p><b>4. ¿Qué regalo me diste que aún conservo?</b></p>
-      <button onclick="mostrarHistoria(4)">a) Un anillo</button>
-      <button onclick="mostrarHistoria(4)">b) Un collar</button>
+  <!-- DEDICATORIA FINAL -->
+  <section class="dedicatoria">
+    <div class="card">
+      <h2>💖 Para ti, mi amor</h2>
+      <p>
+        Quiero que nunca olvides lo mucho que te amo. 
+        Eres la persona más especial que ha llegado a mi vida, 
+        mi motivo de sonrisas, mi calma y mi orgullo más grande.  
+        Me haces sentir afortunada cada día, y no hay palabras suficientes 
+        para describir lo agradecida que estoy por tenerte.
+      </p>
+      <p>
+        Estoy tan orgullosa de la persona increíble que eres, 
+        de todo lo que has logrado y de lo que estás construyendo.  
+        Gracias por existir, por ser tú y por compartir conmigo 
+        todo lo que eres.  
+        Te amo con todo mi corazón, para siempre. 💞
+      </p>
     </div>
-
-    <div id="historia" class="historia"></div>
-    <div id="finalMensaje">💞 Gracias por recordar conmigo nuestra historia. Eres y siempre serás mi amor más bonito 💖</div>
   </section>
 
-  <script>
-    let respuestas = 0;
-
-    function mostrarHistoria(num) {
-      const historias = {
-        1: "💋 Nuestro primer beso fue en mi casa, un momento que jamás olvidaré. Llevaba puesto un pantalón gris, y aunque fue casual, se sintió como el inicio de algo eterno.",
-        2: "🍃 Nuestra primera cita fue en julio, en Chía. Un día que siempre recordaré con una sonrisa, porque fue el comienzo de muchos momentos felices.",
-        3: "💞 Fuiste tú quien dijo 'te amo' primero, y no sabes cuánto significó para mí. Sentí que el mundo entero se detenía para escucharte.",
-        4: "🎁 Me regalaste un collar que llevo puesto todos los días. Es mi amuleto, mi símbolo de ti conmigo donde sea que vaya."
-      };
-
-      document.getElementById("historia").style.display = "block";
-      document.getElementById("historia").innerHTML = historias[num];
-
-      respuestas++;
-      if (respuestas === 4) {
-        setTimeout(() => mostrarFinal(), 2000);
-      }
-    }
-
-    function mostrarFinal() {
-      document.getElementById("finalMensaje").style.display = "block";
-      crearCorazones();
-    }
-
-    function crearCorazones() {
-      for (let i = 0; i < 30; i++) {
-        const heart = document.createElement("div");
-        heart.classList.add("heart");
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.fontSize = Math.random() * 20 + 10 + "px";
-        heart.innerHTML = "💖";
-        document.body.appendChild(heart);
-        setTimeout(() => heart.remove(), 4000);
-      }
-    }
-  </script>
 </body>
-  </html>
+</html>
